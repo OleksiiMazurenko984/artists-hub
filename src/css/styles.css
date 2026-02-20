@@ -5,8 +5,10 @@
   |============================
 */
 /* Common styles */
-@import url('./common-styles/reset.css');
+@import url('./common-styles/fonts.css');
+@import url('./utils/variables.css');
 @import url('./common-styles/base.css');
+@import url('./common-styles/reset.css');
 @import url('./common-styles/container.css');
 @import url('./common-styles/loader.css');
 
