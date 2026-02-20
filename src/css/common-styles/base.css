@@ -28,6 +28,11 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
+  padding-top: 64px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 main {
