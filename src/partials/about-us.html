@@ -1,1 +1,77 @@
-<section class="about-us" id="about-us"><div class="container"></div></section>
+<section class="about-us-section" id="about-us">
+  <div class="container about-us-container">
+    <div class="about-image-wrapper">
+      <picture>
+        <source
+          media="(min-width: 1440px)"
+          type="image/webp"
+          srcset="
+            ../img/about-us/desktop/team_@1x_dt.webp 1x,
+            ../img/about-us/desktop/team_@2x_dt.webp 2x
+          "
+        />
+        <source
+          media="(min-width: 1440px)"
+          type="image/jpeg"
+          srcset="
+            ../img/about-us/desktop/team_@1x_dt.jpg 1x,
+            ../img/about-us/desktop/team_@2x_dt.jpg 2x
+          "
+        />
+        <source
+          media="(min-width: 768px)"
+          type="image/webp"
+          srcset="
+            ../img/about-us/tablet/team_@1x_tb.webp 1x,
+            ../img/about-us/tablet/team_@2x_tb.webp 2x
+          "
+        />
+        <source
+          media="(min-width: 768px)"
+          type="image/jpeg"
+          srcset="
+            ../img/about-us/tablet/team_@1x_tb.jpg 1x,
+            ../img/about-us/tablet/team_@2x_tb.jpg 2x
+          "
+        />
+        <source
+          type="image/webp"
+          srcset="
+            ../img/about-us/mobile/team_@1x_mb.webp 1x,
+            ../img/about-us/mobile/team_@2x_mb.webp 2x
+          "
+        />
+        <source
+          type="image/jpeg"
+          srcset="
+            ../img/about-us/mobile/team_@1x_mb.jpg 1x,
+            ../img/about-us/mobile/team_@2x_mb.jpg 2x
+          "
+        />
+        <img
+          class="about-us-image"
+          src="../img/about-us/mobile/team_@1x_mb.jpg"
+          alt="The photo shows members of the ArtistsHub team"
+          loading="lazy"
+          width="288"
+          height="169"
+        />
+        <!-- loading="lazy" тому що фото знаходиться в самому низу сторінки -->
+      </picture>
+    </div>
+
+    <div class="about-us-content">
+      <span class="about-icon-span">
+        <svg class="logo-icon" width="64" height="64">
+          <use href="../assets/icons.svg#icon-logo"></use>
+        </svg>
+      </span>
+      <h3 class="about-header">About ArtistsHub</h3>
+      <p class="about-text">
+        At ArtistsHub, our mission is to connect music lovers with the artists
+        they adore. We strive to create a vibrant community where discovering
+        new music is as enjoyable as listening to it.
+      </p>
+    </div>
+  </div>
+</section>
