@@ -81,6 +81,7 @@
 }
 
 .mobile-menu-link {
+  font-family: 'IBM Plex Sans';
   --delay: 0ms;
 
   display: block;
@@ -130,6 +131,7 @@
   }
 
   .menu-link {
+    font-family: 'IBM Plex Sans';
     display: block;
     padding: 22.5px 0;
     transition: opacity 400ms cubic-bezier(0.33, 1, 0.68, 1);
