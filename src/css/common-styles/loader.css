@@ -1,40 +1,24 @@
 /* HTML: <div class="loader"></div> */
 .loader {
-  display: none;
-  margin: 0 auto;
-  width: 60px;
-  aspect-ratio: 2;
-  --_g: no-repeat radial-gradient(circle closest-side, #000 90%, #0000);
-  background:
-    var(--_g) 0% 50%,
-    var(--_g) 50% 50%,
-    var(--_g) 100% 50%;
-  background-size: calc(100% / 3) 50%;
-  animation: l3 1s infinite linear;
+  margin: 24px auto;
+  width: 50px;
+  --b: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #514b82;
+  -webkit-mask:
+    repeating-conic-gradient(#0000 0deg, #000 1deg 70deg, #0000 71deg 90deg),
+    radial-gradient(
+      farthest-side,
+      #0000 calc(100% - var(--b) - 1px),
+      #000 calc(100% - var(--b))
+    );
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: l5 1s infinite;
 }
-@keyframes l3 {
-  20% {
-    background-position:
-      0% 0%,
-      50% 50%,
-      100% 50%;
-  }
-  40% {
-    background-position:
-      0% 100%,
-      50% 0%,
-      100% 50%;
-  }
-  60% {
-    background-position:
-      0% 50%,
-      50% 100%,
-      100% 0%;
-  }
-  80% {
-    background-position:
-      0% 50%,
-      50% 50%,
-      100% 100%;
+@keyframes l5 {
+  to {
+    transform: rotate(0.5turn);
   }
 }
