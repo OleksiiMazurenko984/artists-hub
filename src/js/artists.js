@@ -66,31 +66,40 @@ function createArtistCard(artist) {
   
   return `
     <li class="artist-card">
-      <a href="#" class="artist-link" data-artist-id="${artist._id}">
-        <img src="${artist.strArtistThumb}" 
-             alt="${artist.strArtist}" 
-             class="artist-image" 
-             loading="lazy"
-             onerror="this.src='./img/artists/placeholder.png'">
-        <div class="artist-content">
-          <ul class="artist-tags">
-            ${genreTags}
-          </ul>
-          <div class="artist-info">
-            <h3 class="artist-name">${artist.strArtist}</h3>
-            <p class="artist-description">${description}</p>
-          </div>
+      <img src="${artist.strArtistThumb}" 
+           alt="${artist.strArtist}" 
+           class="artist-image" 
+           loading="lazy"
+           onerror="this.src='./img/artists/placeholder.png'">
+      <div class="artist-content">
+        <ul class="artist-tags">
+          ${genreTags}
+        </ul>
+        <div class="artist-info">
+          <h3 class="artist-name">${artist.strArtist}</h3>
+          <p class="artist-description">${description}</p>
         </div>
-        <div class="artist-link-wrapper">
-          <span>Learn More</span>
-          <svg class="artist-icon" width="24" height="24">
-            <use href="./assets/icons.svg#icon-caret-right"></use>
-          </svg>
-        </div>
-      </a>
+      </div>
+      <button type="button" class="artist-learn-more" data-artist-id="${artist._id}">
+        <span>Learn More</span>
+        <svg class="artist-icon" width="24" height="24">
+          <use href="./assets/icons.svg#icon-caret-right"></use>
+        </svg>
+      </button>
     </li>
   `;
 }
+
+// Делегація подій для Learn More кнопки
+artistsList.addEventListener('click', (e) => {
+  const learnMoreBtn = e.target.closest('.artist-learn-more');
+  
+  if (learnMoreBtn) {
+    const artistId = learnMoreBtn.dataset.artistId;
+    console.log('Learn More clicked, Artist ID:', artistId);
+    // Тут буде відкриватись модалка
+  }
+});
 
 // Обробник кнопки Load More
 if (loadMoreBtn) {
