@@ -168,7 +168,7 @@
   fill: #ffffff;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767.98px) {
   .artists-list {
     gap: 32px;
   }
@@ -183,7 +183,7 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1439.98px) {
   .artists-list {
     flex-direction: row;
     flex-wrap: wrap;
