@@ -63,9 +63,9 @@
 
 .artist-image {
   width: 100%;
-  height: auto;
-  aspect-ratio: 488 / 300;
+  aspect-ratio: 640 / 393.44;
   object-fit: cover;
+  object-position: top;
   border-radius: 16px;
   display: block;
 }

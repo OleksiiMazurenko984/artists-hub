@@ -5,52 +5,52 @@ const loadMoreBtn = document.querySelector('.artists-load-more');
 
 let allArtists = [];
 let currentPage = 1;
-const perPage = 8;
+const CARDS_PER_PAGE = 8;
 
-// Initialize
+// Ініціалізація при завантаженні сторінки
 init();
 
 async function init() {
   try {
     await loadArtists();
   } catch (error) {
-    console.error('Failed to load artists:', error);
+    console.error('Помилка завантаження артистів:', error);
   }
 }
 
 async function loadArtists() {
   try {
-    const response = await fetchArtists();
-    allArtists = response.artists || [];
+    const data = await fetchArtists();
+    allArtists = data.artists || [];
     
-    // Show first 8 artists
     showArtistsPage(1);
   } catch (error) {
-    console.error('Error loading artists:', error);
+    console.error('Помилка:', error);
   }
 }
 
 function showArtistsPage(page) {
-  const startIndex = 0;
-  const endIndex = page * perPage;
-  const artistsToShow = allArtists.slice(startIndex, endIndex);
+  const start = 0;
+  const end = page * CARDS_PER_PAGE;
+  const artistsToShow = allArtists.slice(start, end);
   
   renderArtists(artistsToShow);
   
-  // Check if need to show Load More button
-  if (endIndex >= allArtists.length) {
+  // Перевіряємо чи є ще картки для завантаження
+  if (end >= allArtists.length) {
     showEndMessage();
   } else {
-    showLoadMoreButton();
+    showLoadMoreBtn();
   }
 }
 
 function renderArtists(artists) {
-  const markup = artists.map(artist => createArtistCard(artist)).join('');
+  const markup = artists.map(createArtistCard).join('');
   artistsList.innerHTML = markup;
 }
 
 function createArtistCard(artist) {
+  // Обрізаємо жанри до 4-х
   const genreTags = artist.genres?.slice(0, 4).map(genre => 
     `<li class="artist-tag">${genre}</li>`
   ).join('') || `
@@ -60,8 +60,9 @@ function createArtistCard(artist) {
     <li class="artist-tag">Indie</li>
   `;
   
+  // Скорочуємо біографію якщо довга
   const bio = artist.strBiographyEN || 'A talented artist.';
-  const shortBio = bio.length > 150 ? bio.substring(0, 150) + '...' : bio;
+  const description = bio.length > 150 ? bio.substring(0, 150) + '...' : bio;
   
   return `
     <li class="artist-card">
@@ -77,7 +78,7 @@ function createArtistCard(artist) {
           </ul>
           <div class="artist-info">
             <h3 class="artist-name">${artist.strArtist}</h3>
-            <p class="artist-description">${shortBio}</p>
+            <p class="artist-description">${description}</p>
           </div>
         </div>
         <div class="artist-link-wrapper">
@@ -91,29 +92,29 @@ function createArtistCard(artist) {
   `;
 }
 
-// Load More functionality
+// Обробник кнопки Load More
 if (loadMoreBtn) {
   loadMoreBtn.addEventListener('click', handleLoadMore);
 }
 
 function handleLoadMore() {
-  currentPage += 1;
+  currentPage++;
   showArtistsPage(currentPage);
   
-  // Smooth scroll
+  // Плавний скрол вниз
   setTimeout(() => {
-    const card = document.querySelector('.artist-card');
-    if (card) {
-      const cardHeight = card.getBoundingClientRect().height;
+    const firstCard = document.querySelector('.artist-card');
+    if (firstCard) {
+      const height = firstCard.getBoundingClientRect().height;
       window.scrollBy({
-        top: cardHeight * 2,
+        top: height * 2,
         behavior: 'smooth'
       });
     }
   }, 100);
 }
 
-function showLoadMoreButton() {
+function showLoadMoreBtn() {
   loadMoreBtn.innerHTML = `
     <span>Load More</span>
     <svg class="load-more-icon" width="24" height="24">
