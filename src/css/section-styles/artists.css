@@ -153,7 +153,7 @@
   background-color: #764191;
   border: none;
   border-radius: 12px;
-  box-shadow: 
+  box-shadow:
     0px 1px 2px 0px rgba(6, 3, 7, 0.05),
     inset 0px 32px 24px 0px rgba(255, 255, 255, 0.05),
     inset 0px 2px 1px 0px rgba(255, 255, 255, 0.25),
@@ -200,7 +200,11 @@
     flex: 1 1 calc(50% - 16px);
     max-width: calc(50% - 16px);
   }
-  
+
+  .artists-title {
+    width: 525px;
+  }
+
   .artists-load-more {
     width: auto;
   }
