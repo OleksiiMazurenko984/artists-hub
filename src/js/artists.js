@@ -98,17 +98,19 @@ if (loadMoreBtn) {
 }
 
 function handleLoadMore() {
+  const previousCount = currentPage * CARDS_PER_PAGE;
   currentPage++;
   showArtistsPage(currentPage);
   
-  // Плавний скрол вниз
+  // Плавний скрол до першої нової картки
   setTimeout(() => {
-    const firstCard = document.querySelector('.artist-card');
-    if (firstCard) {
-      const height = firstCard.getBoundingClientRect().height;
-      window.scrollBy({
-        top: height * 2,
-        behavior: 'smooth'
+    const cards = document.querySelectorAll('.artist-card');
+    const firstNewCard = cards[previousCount];
+    
+    if (firstNewCard) {
+      firstNewCard.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
       });
     }
   }, 100);
