@@ -6,9 +6,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 // init Swiper:
-const swiper = new Swiper('.swiper', {
+export const swiper = new Swiper('.swiper', {
   spaceBetween: 20,
-  loop: true,
+  loop: false,
   speed: 500,
   navigation: {
     nextEl: '.swiper-button-next',
@@ -24,6 +24,7 @@ const swiper = new Swiper('.swiper', {
   // configure Swiper to use modules
   modules: [Navigation, Pagination],
 });
+
 //
 // const bulletFirst = document.querySelector('.bullet-first');
 // const bulletMiddle = document.querySelector('.bullet-middle');
