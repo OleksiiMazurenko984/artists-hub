@@ -21,7 +21,7 @@
 .logo-icon,
 .mobile-menu .logo-icon {
   display: block;
-  fill: #fff;
+  fill: currentColor;
 }
 
 .burger-button,
@@ -36,7 +36,7 @@
 .burger-button-icon,
 .close-button-icon {
   display: block;
-  fill: #fff;
+  fill: currentColor;
 }
 
 .mobile-menu {
@@ -81,7 +81,7 @@
 }
 
 .mobile-menu-link {
-  font-family: 'IBM Plex Sans';
+  font-family: 'IBM Plex Sans', sans-serif;
   --delay: 0ms;
 
   display: block;
@@ -131,7 +131,7 @@
   }
 
   .menu-link {
-    font-family: 'IBM Plex Sans';
+    font-family: 'IBM Plex Sans', sans-serif;
     display: block;
     padding: 22.5px 0;
     transition: opacity 400ms cubic-bezier(0.33, 1, 0.68, 1);
