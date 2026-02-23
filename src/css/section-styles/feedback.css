@@ -165,32 +165,9 @@
     opacity: 0.6;
   }
 }
-.feedback .custom-pagination {
-  position: absolute; /* Swiper обычно позиционирует пагинацию абсолютом */
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  bottom: 30px;
-}
 
 @media (min-width: 1440px) {
   .feedback .custom-pagination {
     bottom: 80px;
   }
-}
-
-.feedback .custom-bullet {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: #fff;
-  opacity: 0.2;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-}
-
-.feedback .custom-bullet.is-active {
-  opacity: 1;
 }
