@@ -1,3 +1,5 @@
+import iconsSprite from '../../assets/icons.svg';
+
 export function renderAlbums(albums) {
   const container = document.querySelector('.js-artist-albums');
 
@@ -34,8 +36,6 @@ export function renderAlbums(albums) {
 function renderTracks(tracks) {
   if (!tracks) return '';
 
-  console.log('Track data sample:', tracks[0]);
-
   return tracks
     .map(({ strTrack, intDuration, movie }) => {
       const minutes = Math.floor(intDuration / 60000);
@@ -52,10 +52,10 @@ function renderTracks(tracks) {
               ${
                 movie && movie !== 'null'
                   ? `<a href="${movie}" target="_blank" rel="noopener noreferrer">
-                     <svg class="youtube-svg" width="24" height="24">
-                        <use href="./assets/icons.svg#icon-youtube"></use>
-                     </svg>
-                   </a>`
+                       <svg class="youtube-svg" width="24" height="24">
+                         <use href="${iconsSprite}#icon-youtube"></use>
+                       </svg>
+                     </a>`
                   : ''
               }
             </li>
