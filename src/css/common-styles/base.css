@@ -68,3 +68,9 @@ button {
     inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
   border-radius: 12px;
 }
+
+@media only screen and (min-width: 1439.98px) {
+  body {
+    padding-top: 72px;
+  }
+}
