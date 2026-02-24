@@ -30,7 +30,7 @@
   font-weight: 700;
   font-size: 44px;
   line-height: 1.2;
-  letter-spacing: -0.44px;
+  letter-spacing: -0.01em;
   color: #ffffff;
   margin: 0;
 }
@@ -134,8 +134,12 @@
   opacity: 0.8;
 }
 
-.artist-learn-more:focus {
-  outline: none;
+.artist-learn-more:focus,
+.artist-learn-more:active,
+.artist-learn-more:focus-visible {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .artist-icon {
@@ -190,6 +194,10 @@
 }
 
 @media (min-width: 1439.98px) {
+  .artists-title {
+    font-size: 60px;
+  }
+
   .artists-list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -206,12 +214,13 @@
   }
 }
 
-/* Force remove outline */
-.artist-learn-more,
-.artist-learn-more:focus,
-.artist-learn-more:active,
-.artist-learn-more:focus-visible {
-  outline: none !important;
-  border: none !important;
-  box-shadow: none !important;
+/* Hide desktop line break on mobile/tablet */
+.desktop-br {
+  display: none;
+}
+
+@media (min-width: 1439.98px) {
+  .desktop-br {
+    display: inline;
+  }
 }
