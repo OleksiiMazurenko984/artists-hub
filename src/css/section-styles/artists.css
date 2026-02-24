@@ -13,11 +13,8 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
-<<<<<<< HEAD
   color: #ffffff;
   margin-bottom: 16px;
-=======
->>>>>>> f0b7588 (correct titles in artists section)
 }
 
 .artists-title {
@@ -26,11 +23,7 @@
   font-size: 44px;
   line-height: 1.2;
   letter-spacing: -0.01em;
-<<<<<<< HEAD
   color: #ffffff;
-=======
-  max-width: 288px;
->>>>>>> f0b7588 (correct titles in artists section)
 }
 
 .artists-list {
@@ -156,11 +149,8 @@
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 500;
   font-size: 18px;
-<<<<<<< HEAD
-  color: #ffffff;
-=======
   color: #fff;
->>>>>>> f0b7588 (correct titles in artists section)
+  cursor: pointer;
   transition: opacity 0.3s ease;
 }
 
