@@ -54,12 +54,29 @@
   margin: 0;
 }
 
+.footer-nav a,
+.footer-socials a {
+  transition: opacity 400ms cubic-bezier(0.33, 1, 0.68, 1);
+}
+
 .footer-nav a {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
   color: #fff;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus,
+.footer-socials a:hover,
+.footer-socials a:focus {
+  opacity: 0.6;
+}
+
+.footer-nav a:active,
+.footer-socials a:active {
+  opacity: 0.2;
 }
 
 .footer-divider {
