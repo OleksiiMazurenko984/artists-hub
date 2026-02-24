@@ -3,6 +3,7 @@ import iconsSprite from '../assets/icons.svg';
 
 const artistsList = document.querySelector('.artists-list');
 const loadMoreBtn = document.querySelector('.artists-load-more');
+const loader = document.querySelector('.artists-loader');
 
 let currentPage = 1;
 const CARDS_PER_PAGE = 8;
@@ -21,7 +22,7 @@ async function init() {
 async function loadArtists() {
   try {
     lockButton();
-
+    showLoader();
     const data = await fetchArtists({
       page: currentPage,
       limit: CARDS_PER_PAGE,
@@ -38,6 +39,8 @@ async function loadArtists() {
   } catch (error) {
     console.error('Помилка:', error);
     showLoadMoreBtn();
+  } finally {
+    hideLoader();
   }
 }
 
@@ -136,7 +139,6 @@ function showLoadMoreBtn() {
   `;
   loadMoreBtn.disabled = false;
   loadMoreBtn.style.cursor = 'pointer';
-  loadMoreBtn.style.opacity = '1';
   loadMoreBtn.style.display = 'flex';
 }
 
@@ -146,11 +148,17 @@ function showEndMessage() {
   `;
   loadMoreBtn.disabled = true;
   loadMoreBtn.style.cursor = 'not-allowed';
-  loadMoreBtn.style.opacity = '0.6';
 }
 
 function lockButton() {
   loadMoreBtn.disabled = true;
   loadMoreBtn.style.cursor = 'not-allowed';
-  loadMoreBtn.style.opacity = '0.6';
+}
+
+function showLoader() {
+  loader.style.display = 'block';
+}
+
+function hideLoader() {
+  loader.style.display = 'none';
 }
