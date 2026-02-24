@@ -1,4 +1,5 @@
 import { fetchArtistById, fetchArtistAlbums } from './api/fetchArtist.js';
+import { renderBiography } from './render/renderModal.js';
 import { renderAlbums } from './render/renderAlbums.js';
 
 const modal = document.querySelector('.modal');
@@ -49,6 +50,14 @@ async function onLearnMoreArtistClick(event) {
   openModal();
 
   //! Loader
+
+   try {
+    const [bioResponse] = await Promise.all([fetchArtistById(artistId)]);
+
+     renderBiography([bioResponse]);
+  } catch (error) {
+    console.error('Error:', error);
+  }
 
   try {
     const [albumsResponse] = await Promise.all([fetchArtistAlbums(artistId)]);
