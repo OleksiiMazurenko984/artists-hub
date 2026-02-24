@@ -26,7 +26,7 @@
 .artists-title {
   font-family: 'Epilogue', sans-serif;
   font-weight: 700;
-  font-size: 44px;
+  font-size: 84px;
   line-height: 1.2;
   letter-spacing: -0.44px;
   color: #fff;
@@ -240,7 +240,7 @@
   border-radius: 12px;
   outline: none;
   background-color: transparent;
-  color: #fff;
+  color: currentColor;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
