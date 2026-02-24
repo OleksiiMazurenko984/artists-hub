@@ -209,6 +209,7 @@
 .filters-sidebar {
   display: none;
   position: absolute;
+  z-index: 100;
   width: 100%;
 }
 
@@ -216,7 +217,7 @@
   display: block;
 }
 
-.filters-wrapper.is-open .icon-chevron {
+.filters-wrapper.is-open .mobile-filter-btn .icon-chevron {
   transform: rotate(180deg);
 }
 
@@ -239,7 +240,7 @@
   border-radius: 12px;
   outline: none;
   background-color: transparent;
-  color: currentColor;
+  color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -385,6 +386,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 304px;
   }
 
   .artists-catalog-content {
