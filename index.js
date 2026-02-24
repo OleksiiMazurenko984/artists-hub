@@ -45,9 +45,9 @@ import{S as M,N as S,P as A,a as h}from"./assets/vendor-fJp_pnmi.js";(function()
     <svg class="load-more-icon" width="24" height="24">
        <use href="${f}#icon-down-arrow-alt"></use>
     </svg>
-  `,i.disabled=!1,i.style.cursor="pointer",i.style.opacity="1",i.style.display="flex"}function G(){i.innerHTML=`
+  `,i.disabled=!1,i.style.cursor="pointer",i.style.display="flex"}function G(){i.innerHTML=`
     <span>Sorry, you have reached the limit.</span>
-  `,i.disabled=!0,i.style.cursor="not-allowed",i.style.opacity="0.6"}function D(){i.disabled=!0,i.style.cursor="not-allowed",i.style.opacity="0.6"}function K(){L.style.display="block"}function z(){L.style.display="none"}function J(t){const e=document.querySelector(".js-artist-albums");if(!e)return;if(!t||t.length===0){e.innerHTML="<p>No albums available for this artist.</p>";return}const s=t.map(({strAlbum:n,intYearReleased:r,tracks:o})=>`
+  `,i.disabled=!0,i.style.cursor="not-allowed"}function D(){i.disabled=!0,i.style.cursor="not-allowed"}function K(){L.style.display="block"}function z(){L.style.display="none"}function J(t){const e=document.querySelector(".js-artist-albums");if(!e)return;if(!t||t.length===0){e.innerHTML="<p>No albums available for this artist.</p>";return}const s=t.map(({strAlbum:n,intYearReleased:r,tracks:o})=>`
         <li class="albums-container">
           <h2 class="album-name">${n} (${r})</h2>
           
@@ -75,6 +75,6 @@ import{S as M,N as S,P as A,a as h}from"./assets/vendor-fJp_pnmi.js";(function()
             </li>
           </ul>
         </li>
-      `}).join(""):""}const a=document.querySelector(".modal"),V=document.querySelector(".close-image"),X=document.querySelector(".artists-list"),y=document.querySelector(".js-artist-bio"),g=document.querySelector(".js-artist-albums");X.addEventListener("click",Q);V.addEventListener("click",p);function Z(){a.style.display="flex",document.body.classList.add("modal-open"),window.addEventListener("keydown",v),a.addEventListener("click",w)}function p(){a.style.display="none",document.body.classList.remove("modal-open"),y&&(y.innerHTML=""),g&&(g.innerHTML=""),window.removeEventListener("keydown",v),a.removeEventListener("click",w)}function v(t){t.code==="Escape"&&p()}function w(t){t.target===a&&p()}async function Q(t){const e=t.target.closest(".artist-learn-more");if(!e)return;const s=e.dataset.artistId;Z();//! Loader
+      `}).join(""):""}const a=document.querySelector(".modal"),V=document.querySelector(".close-image"),X=document.querySelector(".artists-list"),g=document.querySelector(".js-artist-bio"),y=document.querySelector(".js-artist-albums");X.addEventListener("click",Q);V.addEventListener("click",p);function Z(){a.style.display="flex",document.body.classList.add("modal-open"),window.addEventListener("keydown",v),a.addEventListener("click",w)}function p(){a.style.display="none",document.body.classList.remove("modal-open"),g&&(g.innerHTML=""),y&&(y.innerHTML=""),window.removeEventListener("keydown",v),a.removeEventListener("click",w)}function v(t){t.code==="Escape"&&p()}function w(t){t.target===a&&p()}async function Q(t){const e=t.target.closest(".artist-learn-more");if(!e)return;const s=e.dataset.artistId;Z();//! Loader
 try{const[n]=await Promise.all([H(s)]);J(n.albumsList)}catch(n){console.error("Error:",n)}}$();
 //# sourceMappingURL=index.js.map
