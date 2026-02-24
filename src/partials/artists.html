@@ -10,7 +10,13 @@
         <div class="filters-controls">
           <div class="filters-top">
             <span class="filters-label">Filters</span>
-            <button type="reset" class="filters-reset-btn">Reset</button>
+            <button
+              type="reset"
+              form="artists-filter-form"
+              class="filters-reset-btn"
+            >
+              Reset
+            </button>
           </div>
 
           <button type="button" class="mobile-filter-btn" data-filter-btn>
@@ -22,7 +28,7 @@
         </div>
 
         <aside class="filters-sidebar">
-          <form class="filters-form">
+          <form class="filters-form" id="artists-filter-form">
             <div class="search-container">
               <svg class="search-icon" width="24" height="24">
                 <use href="./assets/icons.svg#icon-search"></use>
