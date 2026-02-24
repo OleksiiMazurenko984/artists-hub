@@ -1,12 +1,12 @@
-ul {
-  list-style: none;
+body.modal-open {
+  overflow: hidden;
 }
 .modal {
   inset: 0;
   background-color: rgba(0, 0, 0, 0.25);
   position: fixed;
-  z-index: 999;
-  display: flex;
+  z-index: 9999;
+  display: none;
   justify-content: center;
   align-items: flex-start;
   opacity: 1;
@@ -104,6 +104,9 @@ ul {
   padding: 14px 11px;
   min-width: 250px;
 }
+.albums-container:not(:last-child) {
+  margin-bottom: 32px;
+}
 .album-name {
   font-weight: 600;
   font-size: 16px;
@@ -182,6 +185,9 @@ ul {
   .albums-container {
     flex-basis: calc((100% - 32px) / 2);
   }
+  .albums-container:not(:last-child) {
+    margin-bottom: 0px;
+  }
 }
 
 /*Laptop*/
@@ -214,4 +220,10 @@ ul {
   .albums-container {
     flex-basis: calc((100% - 96px) / 4);
   }
+}
+.track-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
 }
