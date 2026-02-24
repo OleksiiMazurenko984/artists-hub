@@ -20,25 +20,21 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
-  color: #fff;
 }
 
 .artists-title {
   font-family: 'Epilogue', sans-serif;
   font-weight: 700;
-  font-size: 84px;
+  font-size: 44px;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  color: #ffffff;
-  margin: 0;
+  max-width: 288px;
 }
 
 .artists-list {
   display: flex;
   flex-direction: column;
   gap: 64px;
-  list-style: none;
-  padding: 0;
   margin: 0 0 64px 0;
 }
 
@@ -166,7 +162,6 @@
   font-weight: 500;
   font-size: 18px;
   color: #fff;
-  cursor: pointer;
   transition: opacity 0.3s ease;
 }
 
@@ -330,6 +325,10 @@
 }
 
 @media (min-width: 767.98px) {
+  .artists-title {
+    max-width: 704px;
+  }
+
   .artists-list {
     gap: 32px;
   }
@@ -373,7 +372,8 @@
 
 @media (min-width: 1439.98px) {
   .artists-title {
-    font-size: 60px;
+    font-size: 84px;
+    max-width: 863px;
   }
 
   .artists-list {
@@ -385,10 +385,6 @@
   .artist-card {
     flex: 1 1 calc(50% - 16px);
     max-width: calc(50% - 16px);
-  }
-
-  .artists-title {
-    width: 525px;
   }
 
   .artists-load-more {
@@ -447,17 +443,6 @@
     padding: 0px;
     border-radius: 0px;
     background: transparent;
-  }
-}
-
-/* Hide desktop line break on mobile/tablet */
-.desktop-br {
-  display: none;
-}
-
-@media (min-width: 1439.98px) {
-  .desktop-br {
-    display: inline;
   }
 }
 
