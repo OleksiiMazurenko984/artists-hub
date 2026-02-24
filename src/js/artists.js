@@ -139,7 +139,6 @@ function showLoadMoreBtn() {
   `;
   loadMoreBtn.disabled = false;
   loadMoreBtn.style.cursor = 'pointer';
-  loadMoreBtn.style.opacity = '1';
   loadMoreBtn.style.display = 'flex';
 }
 
@@ -149,13 +148,11 @@ function showEndMessage() {
   `;
   loadMoreBtn.disabled = true;
   loadMoreBtn.style.cursor = 'not-allowed';
-  loadMoreBtn.style.opacity = '0.6';
 }
 
 function lockButton() {
   loadMoreBtn.disabled = true;
   loadMoreBtn.style.cursor = 'not-allowed';
-  loadMoreBtn.style.opacity = '0.6';
 }
 
 function showLoader() {
