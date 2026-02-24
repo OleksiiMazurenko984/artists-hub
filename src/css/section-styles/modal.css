@@ -3,14 +3,14 @@ body.modal-open {
 }
 .modal {
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
   z-index: 9999;
   display: none;
   justify-content: center;
   align-items: flex-start;
   opacity: 1;
-  padding: 64px 16px;
+  padding: 32px 16px;
 }
 .artists-modal {
   width: 100%;
@@ -28,6 +28,9 @@ body.modal-open {
   justify-content: flex-start;
   flex-direction: column;
   gap: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #060307;
+  overflow-x: hidden;
 }
 .close-btn {
   width: 32px;
@@ -39,6 +42,7 @@ body.modal-open {
   position: absolute;
   top: 16px;
   right: 16px;
+  box-shadow: none;
 }
 .sub-title {
   font-weight: 700;
@@ -47,16 +51,25 @@ body.modal-open {
   letter-spacing: -0.01em;
   text-align: center;
   color: #fff;
+  margin-bottom: 16px;
 }
 .close-image {
   fill: #fff;
 }
 .artist-avatar {
   justify-self: center;
+  margin-bottom: 32px;
+  width: auto;
+  max-width: 272px;
+  height: auto;
+  border-radius: 16px;
 }
-
+.artist-info-conainer {
+  max-width: 576px;
+}
 .artist-info {
   margin-bottom: 16px;
+  max-width: 146px;
 }
 .bold-text {
   font-weight: 600;
@@ -122,6 +135,9 @@ body.modal-open {
 .track-info-text-list {
   background: rgba(255, 255, 255, 0.05);
   margin-top: 12px;
+  border-radius: 8px;
+  padding: 4px 0px 4px 12px;
+  height: 20px;
 }
 
 .track-info {
@@ -156,16 +172,31 @@ body.modal-open {
 /* Tablet */
 
 @media only screen and (min-width: 767.98px) {
+  .artists-modal {
+    max-width: 702px;
+  }
   .sub-title {
     font-weight: 700;
     font-size: 32px;
     line-height: 1.3;
     letter-spacing: -0.01em;
     text-align: center;
+    margin-bottom: 48px;
   }
   .artist-avatar {
-    width: 654px;
-    height: 402px;
+    width: 100%;
+    max-width: 654px;
+    height: auto;
+    margin-bottom: 32px;
+  }
+  .artist-info {
+    margin: 0;
+  }
+  .artist-info-list {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 24px 24px;
+    width: 100%;
   }
   .albums-container {
     width: 311px;
@@ -194,28 +225,31 @@ body.modal-open {
 @media only screen and (min-width: 1439.98px) {
   .artists-modal {
     padding: 64px;
+    max-width: 1312px;
   }
   .laptop-container {
     display: flex;
+    align-items: flex-start;
   }
   .artist-avatar {
-    width: 100%;
-    min-width: 576px;
+    width: auto;
     height: auto;
+    max-width: 576px;
     margin-right: 32px;
+    max-height: 700px;
+    object-fit: contain;
+    margin-bottom: 0;
   }
   .artist-info-conainer {
     display: flex;
     flex-direction: column;
   }
-  .artist-info-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px 64px;
-    width: 100%;
-  }
   .biography {
     margin-bottom: 32px;
+  }
+  .albums-list {
+    max-width: 1320px;
+    margin: 0 auto;
   }
   .albums-container {
     flex-basis: calc((100% - 96px) / 4);
