@@ -7,6 +7,7 @@ const closeModalBtn = document.querySelector('.close-image');
 const artistsList = document.querySelector('.artists-list');
 const bioContainer = document.querySelector('.js-artist-bio');
 const albumsContainer = document.querySelector('.js-artist-albums');
+const modalLoader = document.querySelector('.modal-loader');
 
 artistsList.addEventListener('click', onLearnMoreArtistClick);
 closeModalBtn.addEventListener('click', closeModal);
@@ -25,10 +26,24 @@ function closeModal() {
 
   if (bioContainer) bioContainer.innerHTML = '';
   if (albumsContainer) albumsContainer.innerHTML = '';
+  hideModalLoader();
 
   window.removeEventListener('keydown', onEscKeyPress);
   modal.removeEventListener('click', onBackdropClick);
 }
+
+function showModalLoader() {
+  if (modalLoader) {
+    modalLoader.style.display = 'block';
+  }
+}
+
+function hideModalLoader() {
+  if (modalLoader) {
+    modalLoader.style.display = 'none';
+  }
+}
+
 function onEscKeyPress(event) {
   if (event.code === 'Escape') {
     closeModal();
@@ -49,21 +64,19 @@ async function onLearnMoreArtistClick(event) {
 
   openModal();
 
-  //! Loader
-
-   try {
-    const [bioResponse] = await Promise.all([fetchArtistById(artistId)]);
-
-     renderBiography([bioResponse]);
-  } catch (error) {
-    console.error('Error:', error);
-  }
+  showModalLoader();
 
   try {
-    const [albumsResponse] = await Promise.all([fetchArtistAlbums(artistId)]);
+    const [bioResponse, albumsResponse] = await Promise.all([
+      fetchArtistById(artistId),
+      fetchArtistAlbums(artistId),
+    ]);
 
+    renderBiography([bioResponse]);
     renderAlbums(albumsResponse.albumsList);
   } catch (error) {
     console.error('Error:', error);
+  } finally {
+    hideModalLoader();
   }
 }

@@ -105,7 +105,7 @@
 
     transition: all 0.3s ease;
 
-    &:hover{
+    &:hover {
       background: #1e1c1f;
       border: 1px solid rgba(6, 3, 7, 0.15);
     }
@@ -179,4 +179,8 @@
   .feedback .custom-pagination {
     bottom: 80px;
   }
+}
+
+.feedback-loader {
+  display: none;
 }

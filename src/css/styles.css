@@ -10,7 +10,7 @@
 @import url('./common-styles/base.css');
 @import url('./common-styles/reset.css');
 @import url('./common-styles/container.css');
-@import url('./common-styles/loader.css');
+@import url('./utils/loader.css');
 
 /* Sections style */
 @import url('./section-styles/header.css');

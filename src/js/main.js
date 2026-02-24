@@ -4,6 +4,5 @@ import './render/renderFeedbacks.js';
 
 initMobileMenu();
 
-// Artists section
 import './artists.js';
 import './artist-modal.js';
