@@ -16,7 +16,7 @@ export function renderBiography(artistsBio) {
         genres = [],
       }) => {
         const tagsMarkup = genres
-          .map(tag => `<li class="tags">${tag}</li>`)
+          .map(tag => `<li class="modal-tags">${tag}</li>`)
           .join('');
 
         return `

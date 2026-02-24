@@ -27,8 +27,6 @@
 .burger-button,
 .close-button {
   padding: 0;
-  border: none;
-  background: transparent;
   background-color: transparent;
   box-shadow: none;
 }

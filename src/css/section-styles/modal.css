@@ -37,7 +37,6 @@ body.modal-open {
   height: 32px;
   padding: 0;
   margin: 0;
-  border: 0;
   background-color: transparent;
   position: absolute;
   top: 16px;
@@ -167,8 +166,6 @@ body.modal-open {
   line-height: 1.5;
   color: #fff;
 }
-.albums-list {
-}
 
 .modal-loader {
   display: none;
@@ -209,10 +206,7 @@ body.modal-open {
   .modal-tags-list {
     align-self: flex-start;
   }
-  .albums-list {
-    gap: 32px;
-    row-gap: 32px;
-  }
+
   .albums-list {
     display: flex;
     flex-wrap: wrap;
