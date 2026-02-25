@@ -3,24 +3,18 @@
   padding: 64px 0;
 }
 
-.artists-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
 .artists-header {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
   margin-bottom: 32px;
 }
 
 .artists-tagline {
+  display: block;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
   color: #ffffff;
+  margin-bottom: 16px;
 }
 
 .artists-title {
@@ -183,7 +177,7 @@
 
   .artists-load-more {
     width: 340px;
-    align-self: center;
+    margin-inline: auto;
   }
 }
 
