@@ -1,0 +1,63 @@
+<div class="backdrop is-open">
+  <div class="modal-feedbacks">
+    <button class="btn-close" type="button">
+      <svg class="btn-close-icon" width="32" height="32">
+        <use href="../assets/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+    <p class="modal-caption">
+      Submit feedback
+    </p>
+    <form class="modal-form" name="reviewForm">
+      <div class="modal-form-field">
+        <label class="modal-form-label" for="user-name">Name</label>
+          <input
+            type="text"
+            class="modal-form-input"
+            id="user-name"
+            name="user-name"
+            required
+            minlength="2"
+            placeholder="Emily"
+          />
+      </div>
+      <div class="modal-form-field textarea-margin">
+        <label class="modal-form-label" for="user-comment">Message</label>
+        <textarea
+          class="modal-form-comment"
+          name="user-comment"
+          id="user-comment"
+          placeholder="Type your message..."
+        ></textarea>
+      </div>
+      <div class="star-rating-modal" id="rating">
+        <span class="star-modal" data-value="1">
+          <svg class="star-modal-svg" width="31" height="29">
+            <use href="../assets/icons.svg#icon-star"></use>
+          </svg>
+        </span>
+        <span class="star-modal" data-value="2">
+          <svg class="star-modal-svg" width="31" height="29">
+            <use href="../assets/icons.svg#icon-star"></use>
+          </svg>
+        </span>
+        <span class="star-modal" data-value="3">
+          <svg class="star-modal-svg" width="31" height="29">
+            <use href="../assets/icons.svg#icon-star"></use>
+          </svg>
+        </span>
+        <span class="star-modal" data-value="4">
+          <svg class="star-modal-svg" width="31" height="29">
+            <use href="../assets/icons.svg#icon-star"></use>
+          </svg>
+        </span>
+        <span class="star-modal" data-value="5">
+          <svg class="star-modal-svg" width="31" height="29">
+            <use href="../assets/icons.svg#icon-star"></use>
+          </svg>
+        </span>
+      </div>
+      <button class="btn-modal-send" type="submit" disabled>Submit</button>
+    </form>
+  </div>
+</div>
