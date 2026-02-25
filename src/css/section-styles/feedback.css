@@ -130,47 +130,6 @@
   background-color: #fff;
 }
 
-.btn-feedback-modal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-
-  border-radius: 12px;
-  padding: 10px 24px;
-  width: 288px;
-  height: 47px;
-
-  box-shadow:
-    0 1px 2px 0 rgba(6, 3, 7, 0.05),
-    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
-    inset 0 0 0 1px rgba(6, 3, 7, 0.15),
-    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
-    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
-  background: #764191;
-
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.5;
-  color: var(--primary-cl);
-
-  transition: all 0.3s ease;
-
-  @media (min-width: 768px) {
-    width: 158px;
-    font-size: 14px;
-  }
-  @media (min-width: 1440px) {
-    width: 177px;
-    font-size: 16px;
-  }
-
-  &:hover {
-    opacity: 0.6;
-  }
-}
-
 @media (min-width: 1440px) {
   .feedback .custom-pagination {
     bottom: 80px;
