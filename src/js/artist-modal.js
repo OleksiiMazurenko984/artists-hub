@@ -67,13 +67,10 @@ async function onLearnMoreArtistClick(event) {
   showModalLoader();
 
   try {
-    const [bioResponse, albumsResponse] = await Promise.all([
-      fetchArtistById(artistId),
-      fetchArtistAlbums(artistId),
-    ]);
+    const artistData = await fetchArtistAlbums(artistId);
 
-    renderBiography([bioResponse]);
-    renderAlbums(albumsResponse.albumsList);
+    renderBiography([artistData]);
+    renderAlbums(artistData.albumsList);
   } catch {
     return;
   } finally {
