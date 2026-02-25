@@ -1,3 +1,5 @@
+import placeholderImg from '../../img/placeholder.jpg';
+
 export function renderBiography(artistsBio) {
   const biographyEl = document.querySelector('.js-artist-bio');
 
@@ -49,7 +51,7 @@ export function renderBiography(artistsBio) {
         return `
         <h2 class="sub-title">${strArtist ?? 'Unknown Artist'}</h2>
     <div class="laptop-container">
-      <img class="artist-avatar" src="${imageSrc}" alt="${strArtist ?? 'Artist'}" onerror="this.onerror=null;this.src='./img/placeholder.jpg'" />
+      <img class="artist-avatar" src="${imageSrc}" alt="${strArtist ?? 'Artist'}" onerror="this.onerror=null;this.src='${placeholderImg}'" />
       <div class="modal-artist-info-container">
          <ul class="modal-artist-info-list">
           <li class="modal-artist-info-item">
