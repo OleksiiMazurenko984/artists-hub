@@ -1,5 +1,6 @@
 import { fetchArtists } from './api/fetchArtist';
 import iconsSprite from '../assets/icons.svg';
+import placeholderImg from '../img/placeholder.jpg';
 
 const artistsList = document.querySelector('.artists-list');
 const loadMoreBtn = document.querySelector('.artists-load-more');
@@ -58,7 +59,7 @@ function createArtistCard(artist) {
 
   const bio = artist.strBiographyEN || 'A talented artist.';
   const description = bio.length > 150 ? bio.substring(0, 150) + '...' : bio;
-  const imageSrc = artist.strArtistThumb?.trim() || './img/placeholder.jpg';
+  const imageSrc = artist.strArtistThumb?.trim() || placeholderImg;
 
   return `
     <li class="artist-card">
@@ -66,7 +67,7 @@ function createArtistCard(artist) {
            alt="${artist.strArtist}" 
            class="artist-image" 
            loading="lazy"
-           onerror="this.onerror=null;this.src='./img/placeholder.jpg'">
+           onerror="this.onerror=null;this.src='${placeholderImg}'">
       <div class="artist-content">
         <ul class="artist-tags">
           ${genreTags}
