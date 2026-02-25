@@ -51,7 +51,7 @@ function renderTracks(tracks) {
             <li class="track-link track-info">
               ${
                 movie && movie !== 'null'
-                  ? `<a href="${movie}" target="_blank" rel="noopener noreferrer">
+                  ? `<a class="track-youtube-link" href="${movie}" target="_blank" rel="noopener noreferrer">
                        <svg class="youtube-svg" width="24" height="24">
                          <use href="${iconsSprite}#icon-youtube"></use>
                        </svg>

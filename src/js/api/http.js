@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import { showErrorToast } from '../toast';
 axios.defaults.baseURL = 'https://sound-wave.b.goit.study/api/';
 
 async function request(endpoint = '', options = {}, method = 'get') {
@@ -21,19 +21,7 @@ function handleError(error) {
   const status = error?.response?.status;
 
   if (!error.response) {
-    console.error('Network error');
-
-    return;
-  }
-
-  if (status >= 500) {
-    console.error('Server error');
-  } else if (status === 404) {
-    console.error('Resource not found');
-  } else if (status === 400) {
-    console.error('Bad request');
-  } else {
-    console.error('Request failed');
+    showErrorToast(error);
   }
 }
 

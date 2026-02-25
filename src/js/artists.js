@@ -12,11 +12,7 @@ const MAX_PAGES = 10;
 init();
 
 async function init() {
-  try {
-    await loadArtists();
-  } catch (error) {
-    console.error('Помилка завантаження артистів:', error);
-  }
+  await loadArtists();
 }
 
 async function loadArtists() {
@@ -36,8 +32,7 @@ async function loadArtists() {
     } else {
       showLoadMoreBtn();
     }
-  } catch (error) {
-    console.error('Помилка:', error);
+  } catch {
     showLoadMoreBtn();
   } finally {
     hideLoader();
@@ -91,15 +86,6 @@ function createArtistCard(artist) {
   `;
 }
 
-artistsList.addEventListener('click', e => {
-  const learnMoreBtn = e.target.closest('.artist-learn-more');
-
-  if (learnMoreBtn) {
-    const artistId = learnMoreBtn.dataset.artistId;
-    console.log('Learn More clicked, Artist ID:', artistId);
-  }
-});
-
 if (loadMoreBtn) {
   loadMoreBtn.addEventListener('click', handleLoadMore);
 }
@@ -111,8 +97,7 @@ async function handleLoadMore() {
 
   try {
     await loadArtists();
-  } catch (error) {
-    console.error('Помилка при Load More:', error);
+  } catch {
     showLoadMoreBtn();
     return;
   }

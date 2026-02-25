@@ -37,13 +37,20 @@ body.modal-open {
   height: 32px;
   padding: 0;
   margin: 0;
-  border: 0;
   background-color: transparent;
   position: absolute;
   top: 16px;
   right: 16px;
   box-shadow: none;
+  transition: opacity 400ms cubic-bezier(0.33, 1, 0.68, 1);
 }
+
+.close-btn:hover,
+.close-btn:focus,
+.close-btn:active {
+  opacity: 0.6;
+}
+
 .sub-title {
   font-weight: 700;
   font-size: 20px;
@@ -64,36 +71,36 @@ body.modal-open {
   height: auto;
   border-radius: 16px;
 }
-.artist-info-conainer {
+.modal-artist-info-container {
   max-width: 576px;
 }
-.artist-info {
+.modal-artist-info-item {
   margin-bottom: 16px;
   max-width: 146px;
 }
-.bold-text {
+.modal-bold-text {
   font-weight: 600;
   font-size: 18px;
   line-height: 1.5;
   color: #fff;
 }
-.text {
+.modal-text {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
   color: #fff;
 }
-.biography {
+.modal-biography {
   margin-bottom: 16px;
 }
-.tags-list {
+.modal-tags-list {
   display: flex;
   flex-direction: unset;
   align-items: normal;
   flex-wrap: wrap;
   gap: 16px;
 }
-.tags {
+.modal-tags {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
   padding: 4px 10px;
@@ -102,6 +109,7 @@ body.modal-open {
   line-height: 1.5;
   color: #fff;
 }
+
 .sub-title-2 {
   font-weight: 700;
   font-size: 24px;
@@ -160,13 +168,27 @@ body.modal-open {
 .youtube-svg {
   fill: #fff;
 }
+
+.track-youtube-link {
+  display: inline-flex;
+  transition: opacity 400ms cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.track-youtube-link:hover,
+.track-youtube-link:focus,
+.track-youtube-link:active {
+  opacity: 0.6;
+}
+
 .track-info-text {
   font-weight: 600;
   font-size: 8px;
   line-height: 1.5;
   color: #fff;
 }
-.albums-list {
+
+.modal-loader {
+  display: none;
 }
 
 /* Tablet */
@@ -189,10 +211,10 @@ body.modal-open {
     height: auto;
     margin-bottom: 32px;
   }
-  .artist-info {
+  .modal-artist-info-item {
     margin: 0;
   }
-  .artist-info-list {
+  .modal-artist-info-list {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     gap: 24px 24px;
@@ -201,13 +223,10 @@ body.modal-open {
   .albums-container {
     width: 311px;
   }
-  .tags-list {
+  .modal-tags-list {
     align-self: flex-start;
   }
-  .albums-list {
-    gap: 32px;
-    row-gap: 32px;
-  }
+
   .albums-list {
     display: flex;
     flex-wrap: wrap;
@@ -240,11 +259,11 @@ body.modal-open {
     object-fit: contain;
     margin-bottom: 0;
   }
-  .artist-info-conainer {
+  .modal-artist-info-container {
     display: flex;
     flex-direction: column;
   }
-  .biography {
+  .modal-biography {
     margin-bottom: 32px;
   }
   .albums-list {
