@@ -38,4 +38,4 @@ bulletFirst.addEventListener('click', () => swiper.slideTo(0));
 bulletLast.addEventListener('click', () =>
   swiper.slideTo(swiper.slides.length - 1)
 );
-bulletMiddle.addEventListener('click', () => swiper.slideTo(1)); // можно 1 или текущий "средний"
+bulletMiddle.addEventListener('click', () => swiper.slideTo(1));
