@@ -74,8 +74,8 @@ async function onLearnMoreArtistClick(event) {
 
     renderBiography([bioResponse]);
     renderAlbums(albumsResponse.albumsList);
-  } catch (error) {
-    console.error('Error:', error);
+  } catch {
+    return;
   } finally {
     hideModalLoader();
   }

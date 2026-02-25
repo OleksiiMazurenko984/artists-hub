@@ -10,8 +10,8 @@ export async function renderFeedbacks() {
     const { data } = await fetchFeedbacks();
     createListCards(data);
     swiper.update();
-  } catch (e) {
-    console.error(e);
+  } catch {
+    return;
   } finally {
     hideFeedbackLoader();
   }
