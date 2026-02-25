@@ -139,3 +139,22 @@
 .feedback-loader {
   display: none;
 }
+
+.custom-pagination {
+  display:flex;
+  gap: 9px;
+}
+.feedback .custom-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #fff;
+  opacity: 0.2;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.feedback .custom-bullet.is-active {
+  opacity: 1;
+}
