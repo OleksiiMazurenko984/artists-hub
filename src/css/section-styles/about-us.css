@@ -50,11 +50,13 @@
 }
 @media only screen and (min-width: 768px) {
   .about-us-content {
+    gap: 24px;
     max-width: 704px;
   }
 }
 @media only screen and (min-width: 1440px) {
   .about-us-content {
+    max-width: 640px;
     justify-content: center;
   }
 }
@@ -83,6 +85,12 @@
 /* #region logo-icon */
 .logo-icon {
   fill: rgb(var(--primary-cl));
+}
+@media only screen and (min-width: 768px) {
+  .logo-icon {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 /* #endregion */
