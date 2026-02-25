@@ -3,7 +3,7 @@ import { renderBiography } from './render/renderModal.js';
 import { renderAlbums } from './render/renderAlbums.js';
 
 const modal = document.querySelector('.modal');
-const closeModalBtn = document.querySelector('.close-image');
+const closeModalBtn = document.querySelector('.close-btn');
 const artistsList = document.querySelector('.artists-list');
 const bioContainer = document.querySelector('.js-artist-bio');
 const albumsContainer = document.querySelector('.js-artist-albums');

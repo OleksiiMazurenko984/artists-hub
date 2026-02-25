@@ -42,7 +42,15 @@ body.modal-open {
   top: 16px;
   right: 16px;
   box-shadow: none;
+  transition: opacity 400ms cubic-bezier(0.33, 1, 0.68, 1);
 }
+
+.close-btn:hover,
+.close-btn:focus,
+.close-btn:active {
+  opacity: 0.6;
+}
+
 .sub-title {
   font-weight: 700;
   font-size: 20px;
@@ -160,6 +168,18 @@ body.modal-open {
 .youtube-svg {
   fill: #fff;
 }
+
+.track-youtube-link {
+  display: inline-flex;
+  transition: opacity 400ms cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.track-youtube-link:hover,
+.track-youtube-link:focus,
+.track-youtube-link:active {
+  opacity: 0.6;
+}
+
 .track-info-text {
   font-weight: 600;
   font-size: 8px;
