@@ -44,11 +44,12 @@ export function renderBiography(artistsBio) {
         const tagsMarkup = genres
           .map(tag => `<li class="modal-tags">${tag}</li>`)
           .join('');
+        const imageSrc = strArtistThumb?.trim() || './img/placeholder.jpg';
 
         return `
         <h2 class="sub-title">${strArtist ?? 'Unknown Artist'}</h2>
     <div class="laptop-container">
-      <img class="artist-avatar" src="${strArtistThumb ?? ''}" alt="" />
+      <img class="artist-avatar" src="${imageSrc}" alt="${strArtist ?? 'Artist'}" onerror="this.onerror=null;this.src='./img/placeholder.jpg'" />
       <div class="modal-artist-info-container">
          <ul class="modal-artist-info-list">
           <li class="modal-artist-info-item">

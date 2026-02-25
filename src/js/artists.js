@@ -7,7 +7,6 @@ const loader = document.querySelector('.artists-loader');
 
 let currentPage = 1;
 const CARDS_PER_PAGE = 8;
-const MAX_PAGES = 10;
 
 init();
 
@@ -27,7 +26,7 @@ async function loadArtists() {
 
     renderArtists(newArtists);
 
-    if (newArtists.length < CARDS_PER_PAGE || currentPage >= MAX_PAGES) {
+    if (newArtists.length < CARDS_PER_PAGE) {
       showEndMessage();
     } else {
       showLoadMoreBtn();
@@ -59,14 +58,15 @@ function createArtistCard(artist) {
 
   const bio = artist.strBiographyEN || 'A talented artist.';
   const description = bio.length > 150 ? bio.substring(0, 150) + '...' : bio;
+  const imageSrc = artist.strArtistThumb?.trim() || './img/placeholder.jpg';
 
   return `
     <li class="artist-card">
-      <img src="${artist.strArtistThumb}" 
+      <img src="${imageSrc}" 
            alt="${artist.strArtist}" 
            class="artist-image" 
            loading="lazy"
-           onerror="this.src='./img/artists/placeholder.png'">
+           onerror="this.onerror=null;this.src='./img/placeholder.jpg'">
       <div class="artist-content">
         <ul class="artist-tags">
           ${genreTags}
