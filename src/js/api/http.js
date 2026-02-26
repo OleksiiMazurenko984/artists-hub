@@ -27,5 +27,6 @@ function handleError(error) {
 
 export const http = {
   get: (endpoint, options = {}) => request(endpoint, options, 'get'),
-  post:  (endpoint, options = {}) => request(endpoint, options, 'post'),
+  post: (endpoint, data = {}, options = {}) =>
+    request(endpoint, { ...options, data }, 'post'),
 };
