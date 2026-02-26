@@ -13,7 +13,8 @@ body.modal-open {
   padding: 32px 16px;
 }
 .artists-modal {
-  width: 100%;
+  width: 288px;
+  max-width: calc(100vw - 32px);
   max-height: 90dvh;
   background: #060307;
   border-radius: 16px;
@@ -100,6 +101,33 @@ body.modal-open {
   flex-wrap: wrap;
   gap: 16px;
 }
+
+.biography {
+  margin-bottom: 16px;
+}
+
+.biography .text {
+  max-height: 192px;
+  overflow-y: auto;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.45) rgba(255, 255, 255, 0.12);
+}
+
+.biography .text::-webkit-scrollbar {
+  width: 6px;
+}
+
+.biography .text::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+.biography .text::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+}
+
 .modal-tags {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
@@ -195,7 +223,7 @@ body.modal-open {
 
 @media only screen and (min-width: 767.98px) {
   .artists-modal {
-    max-width: 702px;
+    width: 702px;
   }
   .sub-title {
     font-weight: 700;
@@ -219,9 +247,13 @@ body.modal-open {
     grid-template-columns: repeat(2, max-content);
     gap: 24px 24px;
     width: 100%;
+    margin-bottom: 24px;
   }
   .albums-container {
     width: 311px;
+  }
+  .biography {
+    margin-bottom: 24px;
   }
   .modal-tags-list {
     align-self: flex-start;
@@ -235,6 +267,7 @@ body.modal-open {
   .albums-container {
     flex-basis: calc((100% - 32px) / 2);
   }
+
   .albums-container:not(:last-child) {
     margin-bottom: 0px;
   }
@@ -244,7 +277,7 @@ body.modal-open {
 @media only screen and (min-width: 1439.98px) {
   .artists-modal {
     padding: 64px;
-    max-width: 1312px;
+    width: 1312px;
   }
   .laptop-container {
     display: flex;
