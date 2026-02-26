@@ -6,38 +6,74 @@ const artistsList = document.querySelector('.artists-list');
 const filterList = document.querySelector('.filter-list');
 const loadMoreBtn = document.querySelector('.artists-load-more');
 const loader = document.querySelector('.artists-loader');
+const searchByNameInput = document.querySelector('#search-input');
+const searchByNameBtn = document.querySelector('#search-btn');
+const resetBtn = document.querySelector('#reset-btn');
 
 let currentSort = '';
 let currentPage = 1;
 const CARDS_PER_PAGE = 8;
+let more = false;
+let name = '';
 
 if (filterList) {
   filterList.addEventListener('change', event => {
     currentSort = event.target.value;
     currentPage = 1;
     artistsList.innerHTML = '';
-    loadArtists();
+    loadArtists(more, name);
   });
 }
+
+resetBtn.addEventListener('click', async function (event) {
+  more = false;
+  name = '';
+  currentSort = '';
+  currentPage = 1;
+  await loadArtists(more, name);
+});
+
+searchByNameInput.addEventListener('keypress', async function (event) {
+  more = false;
+  if (event.key === 'Enter') {
+    event.preventDefault();
+
+    name = event.target.value;
+    await loadArtists(more, name);
+  }
+});
+
+searchByNameInput.addEventListener('change', event => {
+  name = event.target.value;
+});
+
+searchByNameBtn.addEventListener('click', async function (event) {
+  more = false;
+  event.preventDefault();
+
+  await loadArtists(more, name);
+});
 
 init();
 
 async function init() {
-  await loadArtists();
+  more = true;
+  await loadArtists(more);
 }
 
-async function loadArtists() {
+async function loadArtists(more, name = '') {
   try {
     lockButton();
     showLoader();
     const data = await fetchArtists({
       page: currentPage,
       limit: CARDS_PER_PAGE,
+      name: name,
       sortName: currentSort,
     });
     const newArtists = data?.artists || [];
 
-    renderArtists(newArtists);
+    renderArtists(newArtists, more);
 
     if (newArtists.length < CARDS_PER_PAGE) {
       showEndMessage();
@@ -51,9 +87,11 @@ async function loadArtists() {
   }
 }
 
-function renderArtists(artists) {
+function renderArtists(artists, more) {
   const markup = artists.map(createArtistCard).join('');
-  artistsList.insertAdjacentHTML('beforeend', markup);
+  more
+    ? artistsList.insertAdjacentHTML('beforeend', markup)
+    : (artistsList.innerHTML = markup);
 }
 
 function createArtistCard(artist) {
@@ -104,12 +142,13 @@ if (loadMoreBtn) {
 }
 
 async function handleLoadMore() {
+  more = true;
   const previousCount = document.querySelectorAll('.artist-card').length;
 
   currentPage += 1;
 
   try {
-    await loadArtists();
+    await loadArtists(more, name);
   } catch {
     showLoadMoreBtn();
     return;
