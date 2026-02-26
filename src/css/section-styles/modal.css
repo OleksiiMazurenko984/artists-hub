@@ -24,11 +24,6 @@ body.modal-open {
   overflow-y: auto;
   box-sizing: border-box;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  gap: 16px;
   scrollbar-width: thin;
   scrollbar-color: #888 #060307;
   overflow-x: hidden;
@@ -138,13 +133,17 @@ body.modal-open {
   color: #fff;
 }
 
+.js-artist-bio {
+  margin-bottom: 16px;
+}
+
 .sub-title-2 {
   font-weight: 700;
   font-size: 24px;
   line-height: 1.3;
   letter-spacing: -0.01em;
   color: #fff;
-  text-align: start;
+  margin-bottom: 16px;
 }
 
 .albums-container {
@@ -249,6 +248,11 @@ body.modal-open {
     width: 100%;
     margin-bottom: 24px;
   }
+
+  .js-artist-bio {
+    margin-bottom: 48px;
+  }
+
   .albums-container {
     width: 311px;
   }
