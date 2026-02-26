@@ -62,12 +62,12 @@ import{S as W,N as U,a as B}from"./assets/vendor-BGP0wUfS.js";(function(){const 
             <p class="modal-text">${r??"—"}</p>
           </li>
           <li class="modal-artist-info-item">
-            <h3 class="modal-bold-text">Country</h3>
-            <p class="modal-text">${N??"—"}</p>
-          </li>
-         <li class="modal-artist-info-item">
            <h3 class="modal-bold-text">Members</h3>
             <p class="modal-text">${q??"—"}</p>
+          </li>
+          <li class="modal-artist-info-item">
+            <h3 class="modal-bold-text">Country</h3>
+            <p class="modal-text">${N??"—"}</p>
           </li>
         </ul>
         <div class="biography">
