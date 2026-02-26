@@ -1,16 +1,155 @@
 <section class="artists" id="artists">
-  <div class="container artists-wrapper">
+  <div class="container">
     <div class="artists-header">
       <h2 class="artists-tagline">Artists</h2>
       <h3 class="artists-title">Explore Your New Favorite Artists</h3>
     </div>
-    <ul class="artists-list"></ul>
-    <div class="loader artists-loader"></div>
-    <button type="button" class="artists-load-more">
-      <span>Load More</span>
-      <svg class="load-more-icon" width="24" height="24">
-        <use href="./assets/icons.svg#icon-down-arrow-alt"></use>
-      </svg>
-    </button>
+
+        <div class="artists-catalog-content">
+      <div class="filters-wrapper" data-filter-wrapper>
+        <div class="filters-controls">
+          <div class="filters-top">
+            <span class="filters-label">Filters</span>
+            <button
+              type="reset"
+              form="artist-filters-form"
+              class="filters-reset-btn"
+            >
+              Reset
+            </button>
+          </div>
+
+          <button type="button" class="mobile-filter-btn" data-filter-btn>
+            Search and Filters
+            <svg class="icon-chevron" width="24" height="24">
+              <use href="./assets/icons.svg#icon-chevron-down"></use>
+            </svg>
+          </button>
+        </div>
+
+        <aside class="filters-sidebar">
+          <form id="artist-filters-form" class="filters-form">
+            <div class="search-container">
+              <svg class="search-icon" width="24" height="24">
+                <use href="./assets/icons.svg#icon-search"></use>
+              </svg>
+              <input
+                type="text"
+                name="search"
+                placeholder="Search"
+                class="search-field"
+              />
+            </div>
+
+            <details class="filter-details">
+              <summary class="filter-summary">
+                Sorting
+                <div class="chevron-wrapper">
+                  <svg class="icon-chevron icon-down" width="24" height="24">
+                    <use href="./assets/icons.svg#icon-chevron-down"></use>
+                  </svg>
+                  <svg class="icon-chevron icon-up" width="24" height="24">
+                    <use href="./assets/icons.svg#icon-chevron-up"></use>
+                  </svg>
+                </div>
+              </summary>
+
+              <div class="filter-content">
+                <ul class="filter-list">
+                  <li class="filter-item">
+                    <label class="filter-option">
+                      <input
+                        type="radio"
+                        name="sort"
+                        value="default"
+                        checked
+                        class="filter-input-real"
+                      />
+                      <span class="filter-custom-text">Default</span>
+                    </label>
+                  </li>
+                  <li class="filter-item">
+                    <label class="filter-option">
+                      <input
+                        type="radio"
+                        name="sort"
+                        value="az"
+                        class="filter-input-real"
+                      />
+                      <span class="filter-custom-text">A-Z</span>
+                    </label>
+                  </li>
+                  <li class="filter-item">
+                    <label class="filter-option">
+                      <input
+                        type="radio"
+                        name="sort"
+                        value="za"
+                        class="filter-input-real"
+                      />
+                      <span class="filter-custom-text">Z-A</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="filter-details">
+              <summary class="filter-summary">
+                Genre
+                <div class="chevron-wrapper">
+                  <svg class="icon-chevron icon-down" width="24" height="24">
+                    <use href="./assets/icons.svg#icon-chevron-down"></use>
+                  </svg>
+                  <svg class="icon-chevron icon-up" width="24" height="24">
+                    <use href="./assets/icons.svg#icon-chevron-up"></use>
+                  </svg>
+                </div>
+              </summary>
+
+              <div class="filter-content scrollable">
+                <ul class="filter-list">
+                  <li class="filter-item">
+                    <label class="filter-option">
+                      <input
+                        type="radio"
+                        name="genre"
+                        value="all"
+                        checked
+                        class="filter-input-real"
+                      />
+                      <span class="filter-custom-text">All Genres</span>
+                    </label>
+                  </li>
+
+                  <li class="filter-item">
+                    <label class="filter-option"
+                      ><input
+                        type="radio"
+                        name="genre"
+                        value="rock"
+                        class="filter-input-real"
+                      /><span class="filter-custom-text">Rock</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </form>
+        </aside>
+      </div>
+
+    <div class="artists-wrapper">
+      <ul class="artists-list"></ul>
+
+      <div class="loader artists-loader"></div>
+      
+      <button type="button" class="artists-load-more">
+        <span>Load More</span>
+        <svg class="load-more-icon" width="24" height="24">
+          <use href="./assets/icons.svg#icon-down-arrow-alt"></use>
+        </svg>
+      </button>
+    </div>
   </div>
 </section>
