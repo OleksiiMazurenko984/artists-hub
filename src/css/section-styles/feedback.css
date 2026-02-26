@@ -62,11 +62,11 @@
 }
 
 .swiper .swiper-wrapper {
-  margin-bottom: 60px;
+  margin-bottom: 75px;
 
   @media (min-width: 1440px) {
-    margin-bottom: 124px;
-    padding: 59px 0;
+    /*margin-bottom: 124px;*/
+    /*padding: 59px 0;*/
   }
 }
 
