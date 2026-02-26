@@ -3,11 +3,22 @@ import iconsSprite from '../assets/icons.svg';
 import placeholderImg from '../img/placeholder.jpg';
 
 const artistsList = document.querySelector('.artists-list');
+const filterList = document.querySelector('.filter-list');
 const loadMoreBtn = document.querySelector('.artists-load-more');
 const loader = document.querySelector('.artists-loader');
 
+let currentSort = '';
 let currentPage = 1;
 const CARDS_PER_PAGE = 8;
+
+if (filterList) {
+  filterList.addEventListener('change', event => {
+    currentSort = event.target.value;
+    currentPage = 1;
+    artistsList.innerHTML = '';
+    loadArtists();
+  });
+}
 
 init();
 
@@ -22,6 +33,7 @@ async function loadArtists() {
     const data = await fetchArtists({
       page: currentPage,
       limit: CARDS_PER_PAGE,
+      sortName: currentSort,
     });
     const newArtists = data?.artists || [];
 
