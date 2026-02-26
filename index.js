@@ -29,7 +29,7 @@ import{S as W,N as U,a as M}from"./assets/vendor-BGP0wUfS.js";(function(){const 
           ${t}
         </ul>
         <div class="artist-info">
-          <h3 class="artist-name">${A.strArtist}</h3>
+          <h4 class="artist-name">${A.strArtist}</h4>
           <p class="artist-description">${n}</p>
         </div>
       </div>
