@@ -17,7 +17,7 @@
     <script type="module" crossorigin src="/artists-hub/index.js"></script>
     <link rel="modulepreload" crossorigin href="/artists-hub/assets/vendor-BGP0wUfS.js">
     <link rel="stylesheet" crossorigin href="/artists-hub/assets/vendor-qinFWeER.css">
-    <link rel="stylesheet" crossorigin href="/artists-hub/assets/index-C2_aU5sL.css">
+    <link rel="stylesheet" crossorigin href="/artists-hub/assets/index-s4OiagYJ.css">
   </head>
   <body>
     <header class="header" id="header">
@@ -25,7 +25,7 @@
     <nav class="header-nav">
       <a href="./index.html" class="logo">
         <svg class="logo-company-icon" width="119" height="51">
-          <use href="/artists-hub/assets/icons-BhdRcrdp.svg#icon-company-logo"></use>
+          <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-company-logo"></use>
         </svg>
       </a>
 
@@ -53,7 +53,7 @@
           height="48"
           aria-hidden="true"
         >
-          <use href="/artists-hub/assets/icons-BhdRcrdp.svg#icon-burger"></use>
+          <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-burger"></use>
         </svg>
       </button>
     </nav>
@@ -65,7 +65,7 @@
     <div class="mobile-menu-bar">
       <a href="./index.html" class="logo">
         <svg class="logo-company-icon" width="119" height="51">
-          <use href="/artists-hub/assets/icons-BhdRcrdp.svg#icon-company-logo"></use>
+          <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-company-logo"></use>
         </svg>
       </a>
 
@@ -81,7 +81,7 @@
           height="48"
           aria-hidden="true"
         >
-          <use href="/artists-hub/assets/icons-BhdRcrdp.svg#icon-close"></use>
+          <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-close"></use>
         </svg>
       </button>
     </div>
@@ -114,7 +114,7 @@
       <a href="#artists" class="hero-link">
         <span>Explore Artists</span>
         <svg class="explore-icon" width="24" height="24">
-          <use href="/artists-hub/assets/icons-BhdRcrdp.svg#icon-right-arrow"></use>
+          <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-right-arrow"></use>
         </svg>
       </a>
     </div>
@@ -134,19 +134,157 @@
 </section>
 
       <section class="artists" id="artists">
-  <div class="container artists-wrapper">
+  <div class="container">
     <div class="artists-header">
       <h2 class="artists-tagline">Artists</h2>
       <h3 class="artists-title">Explore Your New Favorite Artists</h3>
     </div>
-    <ul class="artists-list"></ul>
-    <div class="loader artists-loader"></div>
-    <button type="button" class="artists-load-more">
-      <span>Load More</span>
-      <svg class="load-more-icon" width="24" height="24">
-        <use href="/artists-hub/assets/icons-BhdRcrdp.svg#icon-down-arrow-alt"></use>
-      </svg>
-    </button>
+
+        <div class="artists-catalog-content">
+      <div class="filters-wrapper" data-filter-wrapper>
+        <div class="filters-controls">
+          <div class="filters-top">
+            <span class="filters-label">Filters</span>
+            <button
+              type="reset"
+              form="artist-filters-form"
+              class="filters-reset-btn"
+            >
+              Reset
+            </button>
+          </div>
+
+          <button type="button" class="mobile-filter-btn" data-filter-btn>
+            Search and Filters
+            <svg class="icon-chevron" width="24" height="24">
+              <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-chevron-down"></use>
+            </svg>
+          </button>
+        </div>
+
+        <aside class="filters-sidebar">
+          <form id="artist-filters-form" class="filters-form">
+            <div class="search-container">
+              <svg class="search-icon" width="24" height="24">
+                <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-search"></use>
+              </svg>
+              <input
+                type="text"
+                name="search"
+                placeholder="Search"
+                class="search-field"
+              />
+            </div>
+
+            <details class="filter-details">
+              <summary class="filter-summary">
+                Sorting
+                <div class="chevron-wrapper">
+                  <svg class="icon-chevron icon-down" width="24" height="24">
+                    <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-chevron-down"></use>
+                  </svg>
+                  <svg class="icon-chevron icon-up" width="24" height="24">
+                    <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-chevron-up"></use>
+                  </svg>
+                </div>
+              </summary>
+
+              <div class="filter-content">
+                <ul class="filter-list">
+                  <li class="filter-item">
+                    <label class="filter-option">
+                      <input
+                        type="radio"
+                        name="sort"
+                        value="default"
+                        checked
+                        class="filter-input-real"
+                      />
+                      <span class="filter-custom-text">Default</span>
+                    </label>
+                  </li>
+                  <li class="filter-item">
+                    <label class="filter-option">
+                      <input
+                        type="radio"
+                        name="sort"
+                        value="az"
+                        class="filter-input-real"
+                      />
+                      <span class="filter-custom-text">A-Z</span>
+                    </label>
+                  </li>
+                  <li class="filter-item">
+                    <label class="filter-option">
+                      <input
+                        type="radio"
+                        name="sort"
+                        value="za"
+                        class="filter-input-real"
+                      />
+                      <span class="filter-custom-text">Z-A</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="filter-details">
+              <summary class="filter-summary">
+                Genre
+                <div class="chevron-wrapper">
+                  <svg class="icon-chevron icon-down" width="24" height="24">
+                    <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-chevron-down"></use>
+                  </svg>
+                  <svg class="icon-chevron icon-up" width="24" height="24">
+                    <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-chevron-up"></use>
+                  </svg>
+                </div>
+              </summary>
+
+              <div class="filter-content scrollable">
+                <ul class="filter-list">
+                  <li class="filter-item">
+                    <label class="filter-option">
+                      <input
+                        type="radio"
+                        name="genre"
+                        value="all"
+                        checked
+                        class="filter-input-real"
+                      />
+                      <span class="filter-custom-text">All Genres</span>
+                    </label>
+                  </li>
+                  <li class="filter-item">
+                    <label class="filter-option"
+                      ><input
+                        type="radio"
+                        name="genre"
+                        value="rock"
+                        class="filter-input-real"
+                      /><span class="filter-custom-text">Rock</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </form>
+        </aside>
+      </div>
+
+    <div class="artists-wrapper">
+      <ul class="artists-list"></ul>
+
+      <div class="loader artists-loader"></div>
+
+      <button type="button" class="artists-load-more">
+        <span>Load More</span>
+        <svg class="load-more-icon" width="24" height="24">
+          <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-down-arrow-alt"></use>
+        </svg>
+      </button>
+    </div>
   </div>
 </section>
 
@@ -196,7 +334,7 @@
     <div class="about-us-content">
       <span class="about-icon-span">
         <svg class="logo-icon" width="64" height="64">
-          <use href="/artists-hub/assets/icons-BhdRcrdp.svg#icon-logo"></use>
+          <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-logo"></use>
         </svg>
       </span>
       <h2 class="about-header">About ArtistsHub</h2>
@@ -273,13 +411,13 @@
     <div class="footer-top">
       <a href="./index.html" class="footer-logo-link">
         <svg class="footer-logo-icon" width="32" height="32">
-          <use href="/artists-hub/assets/icons-BhdRcrdp.svg#icon-logo"></use>
+          <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-logo"></use>
         </svg>
 
         <span class="footer-logo-text">Artists</span>
 
         <svg class="footer-logo-full" width="119" height="51">
-          <use href="/artists-hub/assets/icons-BhdRcrdp.svg#icon-company-logo"></use>
+          <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-company-logo"></use>
         </svg>
       </a>
 
@@ -303,7 +441,7 @@
             rel="noopener noreferrer"
           >
             <svg>
-              <use href="/artists-hub/assets/icons-BhdRcrdp.svg#icon-instagram"></use>
+              <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-instagram"></use>
             </svg>
           </a>
         </li>
@@ -315,7 +453,7 @@
             rel="noopener noreferrer"
           >
             <svg>
-              <use href="/artists-hub/assets/icons-BhdRcrdp.svg#icon-facebook"></use>
+              <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-facebook"></use>
             </svg>
           </a>
         </li>
@@ -327,7 +465,7 @@
             rel="noopener noreferrer"
           >
             <svg>
-              <use href="/artists-hub/assets/icons-BhdRcrdp.svg#icon-youtube"></use>
+              <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-youtube"></use>
             </svg>
           </a>
         </li>
@@ -339,7 +477,7 @@
   <div class="artists-modal">
     <button class="close-btn" type="button">
       <svg class="close-image" width="32" height="32">
-        <use href="/artists-hub/assets/icons-BhdRcrdp.svg#icon-modal-close"></use>
+        <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-modal-close"></use>
       </svg>
     </button>
     <div class="loader modal-loader"></div>
