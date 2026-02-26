@@ -146,6 +146,7 @@
           <div class="filters-top">
             <span class="filters-label">Filters</span>
             <button
+              id="reset-btn"
               type="reset"
               form="artist-filters-form"
               class="filters-reset-btn"
@@ -165,10 +166,11 @@
         <aside class="filters-sidebar">
           <form id="artist-filters-form" class="filters-form">
             <div class="search-container">
-              <svg class="search-icon" width="24" height="24">
+              <svg id="search-btn" class="search-icon" width="24" height="24">
                 <use href="/artists-hub/assets/icons-CdTw6Ne-.svg#icon-search"></use>
               </svg>
               <input
+                id="search-input"
                 type="text"
                 name="search"
                 placeholder="Search"
