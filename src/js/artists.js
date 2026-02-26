@@ -73,7 +73,7 @@ function createArtistCard(artist) {
           ${genreTags}
         </ul>
         <div class="artist-info">
-          <h3 class="artist-name">${artist.strArtist}</h3>
+          <h4 class="artist-name">${artist.strArtist}</h4>
           <p class="artist-description">${description}</p>
         </div>
       </div>
