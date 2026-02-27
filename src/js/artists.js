@@ -16,6 +16,14 @@ const CARDS_PER_PAGE = 8;
 let more = false;
 let name = '';
 
+artistsList?.addEventListener('click', event => {
+  const emptyStateResetBtn = event.target.closest('[data-empty-reset-btn]');
+
+  if (emptyStateResetBtn) {
+    resetBtn.click();
+  }
+});
+
 if (filterList) {
   filterList.addEventListener('change', event => {
     currentSort = event.target.value;
@@ -73,6 +81,12 @@ async function loadArtists(more, name = '') {
     });
     const newArtists = data?.artists || [];
 
+    if (!more && newArtists.length === 0) {
+      renderEmptyState();
+      hideLoadMoreBtn();
+      return;
+    }
+
     renderArtists(newArtists, more);
 
     if (newArtists.length < CARDS_PER_PAGE) {
@@ -88,10 +102,36 @@ async function loadArtists(more, name = '') {
 }
 
 function renderArtists(artists, more) {
+  clearEmptyState();
   const markup = artists.map(createArtistCard).join('');
   more
     ? artistsList.insertAdjacentHTML('beforeend', markup)
     : (artistsList.innerHTML = markup);
+}
+
+function renderEmptyState() {
+  artistsList.innerHTML = `
+    <li class="artists-empty-state">
+      <div class="artists-empty-state-card">
+        <svg class="artists-empty-state-icon" width="40" height="40">
+          <use href="${iconsSprite}#icon-error-circle"></use>
+        </svg>
+        <h4 class="artists-empty-state-title">Silence on the stage...</h4>
+        <p class="artists-empty-state-text">Looks like no artists match your filters. </br>
+        Try changing them or hit “Reset Filters” to bring back the beat.</p>
+        <button type="button" class="artists-empty-state-btn" data-empty-reset-btn>
+          Reset filters
+        </button>
+      </div>
+    </li>
+  `;
+}
+
+function clearEmptyState() {
+  const emptyState = artistsList.querySelector('.artists-empty-state');
+  if (emptyState) {
+    emptyState.remove();
+  }
 }
 
 function createArtistCard(artist) {
@@ -185,6 +225,10 @@ function showEndMessage() {
   `;
   loadMoreBtn.disabled = true;
   loadMoreBtn.style.cursor = 'not-allowed';
+}
+
+function hideLoadMoreBtn() {
+  loadMoreBtn.style.display = 'none';
 }
 
 function lockButton() {
