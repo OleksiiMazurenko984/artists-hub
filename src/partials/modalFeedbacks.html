@@ -5,23 +5,21 @@
         <use href="../assets/icons.svg#icon-close"></use>
       </svg>
     </button>
-    <p class="modal-caption">
-      Submit feedback
-    </p>
-    <form class="modal-form" name="reviewForm">
+    <p class="modal-caption">Submit feedback</p>
+    <form class="modal-form" name="reviewForm" novalidate>
       <div class="modal-form-field">
         <label class="modal-form-label" for="user-name">Name</label>
-          <input
-            type="text"
-            class="modal-form-input"
-            id="user-name"
-            name="userName"
-            required
-            minlength="2"
-            placeholder="Emily"
-            pattern="^[A-Za-zА-Яа-яЁё\s\.]{2,16}$"
-          />
-        <span class="text-error">Text error</span>
+        <input
+          type="text"
+          class="modal-form-input"
+          id="user-name"
+          name="userName"
+          required
+          minlength="2"
+          placeholder="Emily"
+          pattern="^[A-Za-zА-Яа-яЁё\s\.]{2,16}$"
+        />
+        <span class="text-error">Name is not the right length</span>
       </div>
       <div class="modal-form-field textarea-margin">
         <label class="modal-form-label" for="user-comment">Message</label>
@@ -34,7 +32,7 @@
           minlength="10"
           maxlength="512"
         ></textarea>
-        <span class="text-error">Text error</span>
+        <span class="text-error"> The text is not the right length</span>
       </div>
       <div class="star-rating-modal" id="rating">
         <span class="star-modal" data-value="1">
@@ -63,7 +61,8 @@
           </svg>
         </span>
       </div>
-      <button class="btn-modal-send" type="submit" disabled>Submit</button>
+      <span class="text-error rating-error">Rate is required</span>
+      <button class="btn-modal-send" type="submit">Submit</button>
     </form>
   </div>
 </div>
