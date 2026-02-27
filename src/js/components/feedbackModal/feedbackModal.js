@@ -7,6 +7,8 @@ const backdropModal = document.querySelector('.backdrop');
 const closeBtn = document.querySelector('.btn-close-feedback');
 const form = document.querySelector('.modal-form');
 
+form.checkValidity();
+
 btnLeaveFeedback.addEventListener('click', (event)=>{
   document.body.classList.add('modal-open');
 
@@ -19,11 +21,14 @@ closeBtn.addEventListener('click', onCloseBtnClick)
 
 form.addEventListener('submit',
   async (event)=>{
+
   event.preventDefault();
+
   const selectedStars = document.querySelectorAll('.star-modal.active');
   const setRating = selectedStars.length;
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
+
   const postData = {
     name: data.userName.trim(),
     rating: +setRating,
@@ -39,13 +44,15 @@ form.addEventListener('submit',
       position:'topRight',
       timeout:2000,
     });
+
     form.reset();
     closeFeedbackModal();
-    selectedStars.classList.remove('active');
+    clearStarsAfterSubmit();
   }
+
   catch(e){
     iziToast.error({
-      title:"Габела , дані не дійшли",
+      title:"Дані не були відправленні",
       message: 'Відбулася помилка під час запиту!',
       position:'topRight',
       timeout:1000,
@@ -77,8 +84,10 @@ function onCloseBtnClick(){
    closeFeedbackModal();
 }
 
-
-
+function clearStarsAfterSubmit(){
+   const selectedStars = document.querySelectorAll('.star-modal');
+   selectedStars.forEach(element => element.classList.remove('active'));
+}
 
 
 

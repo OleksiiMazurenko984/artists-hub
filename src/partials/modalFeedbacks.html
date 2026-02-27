@@ -19,6 +19,7 @@
             required
             minlength="2"
             placeholder="Emily"
+            pattern="^[A-Za-zА-Яа-яЁё\s\.]{2,16}$"
           />
       </div>
       <div class="modal-form-field textarea-margin">
@@ -28,6 +29,9 @@
           name="userComment"
           id="user-comment"
           placeholder="Type your message..."
+          required
+          minlength="10"
+          maxlength="512"
         ></textarea>
       </div>
       <div class="star-rating-modal" id="rating">

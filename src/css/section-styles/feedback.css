@@ -59,14 +59,20 @@
   align-items: center;
   /*padding: 59px;*/
   /*gap: 32px;*/
+  margin-bottom: 26px;
+  @media(min-width: 1439.98px) {
+    margin-bottom: 80px;
+  }
 }
 
 .swiper .swiper-wrapper {
-  margin-bottom: 75px;
+  margin-bottom: 26px;
 
-  @media (min-width: 1440px) {
-    /*margin-bottom: 124px;*/
-    /*padding: 59px 0;*/
+  @media (min-width: 767.98px) {
+    margin-bottom: 40px;
+  }
+  @media (min-width: 1439.98px) {
+    margin-bottom: 75px;
   }
 }
 

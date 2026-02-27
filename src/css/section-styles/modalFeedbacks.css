@@ -237,6 +237,11 @@
   }
 }
 
+.btn-modal-send:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 .backdrop.is-open {
   opacity: 1;
   visibility: visible;
