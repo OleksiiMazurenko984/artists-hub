@@ -21,6 +21,7 @@
             placeholder="Emily"
             pattern="^[A-Za-zА-Яа-яЁё\s\.]{2,16}$"
           />
+        <span class="text-error">Text error</span>
       </div>
       <div class="modal-form-field textarea-margin">
         <label class="modal-form-label" for="user-comment">Message</label>
@@ -33,6 +34,7 @@
           minlength="10"
           maxlength="512"
         ></textarea>
+        <span class="text-error">Text error</span>
       </div>
       <div class="star-rating-modal" id="rating">
         <span class="star-modal" data-value="1">
@@ -61,7 +63,7 @@
           </svg>
         </span>
       </div>
-      <button class="btn-modal-send" type="submit">Submit</button>
+      <button class="btn-modal-send" type="submit" disabled>Submit</button>
     </form>
   </div>
 </div>

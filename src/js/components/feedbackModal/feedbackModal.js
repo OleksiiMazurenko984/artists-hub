@@ -6,8 +6,11 @@ const btnLeaveFeedback  =  document.querySelector('.btn-feedback-modal');
 const backdropModal = document.querySelector('.backdrop');
 const closeBtn = document.querySelector('.btn-close-feedback');
 const form = document.querySelector('.modal-form');
+const stars = document.querySelectorAll('.star-modal');
+const submitBtn = document.querySelector('.btn-modal-send');
 
-form.checkValidity();
+updateSubmitButtonState();
+
 
 btnLeaveFeedback.addEventListener('click', (event)=>{
   document.body.classList.add('modal-open');
@@ -18,6 +21,9 @@ btnLeaveFeedback.addEventListener('click', (event)=>{
 
 backdropModal.addEventListener('click', onBackDropModalClick)
 closeBtn.addEventListener('click', onCloseBtnClick)
+form.addEventListener('change', updateSubmitButtonState);
+form.addEventListener('input', updateSubmitButtonState);
+stars.forEach(star => star.addEventListener('click', updateSubmitButtonState));
 
 form.addEventListener('submit',
   async (event)=>{
@@ -48,6 +54,7 @@ form.addEventListener('submit',
     form.reset();
     closeFeedbackModal();
     clearStarsAfterSubmit();
+    updateSubmitButtonState();
   }
 
   catch(e){
@@ -89,6 +96,12 @@ function clearStarsAfterSubmit(){
    selectedStars.forEach(element => element.classList.remove('active'));
 }
 
+function updateSubmitButtonState() {
+  const hasActiveStar = document.querySelector('.star-modal.active') !== null;
+  const isFormValid = form.checkValidity();
+
+  submitBtn.disabled = !(hasActiveStar && isFormValid);
+}
 
 
 
