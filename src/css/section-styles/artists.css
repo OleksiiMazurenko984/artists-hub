@@ -306,7 +306,7 @@
   opacity: 1;
 }
 
-.scrollable {
+.filter-content.scrollable {
   max-height: 376px;
   overflow-y: auto;
   scrollbar-width: thin;
