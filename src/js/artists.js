@@ -9,12 +9,14 @@ const loader = document.querySelector('.artists-loader');
 const searchByNameInput = document.querySelector('#search-input');
 const searchByNameBtn = document.querySelector('#search-btn');
 const resetBtn = document.querySelector('#reset-btn');
+const genresList = document.querySelector('.js-filter-genres');
 
 let currentSort = '';
 let currentPage = 1;
 const CARDS_PER_PAGE = 8;
 let more = false;
 let name = '';
+let currentGenre = '';
 
 artistsList?.addEventListener('click', event => {
   const emptyStateResetBtn = event.target.closest('[data-empty-reset-btn]');
@@ -29,6 +31,7 @@ if (filterList) {
     currentSort = event.target.value;
     currentPage = 1;
     artistsList.innerHTML = '';
+    closeDropDown();
     loadArtists(more, name);
   });
 }
@@ -37,7 +40,12 @@ resetBtn.addEventListener('click', async function (event) {
   more = false;
   name = '';
   currentSort = '';
+  currentGenre = '';
   currentPage = 1;
+  artistsList.innerHTML = '';
+
+  searchByNameInput.value = '';
+
   await loadArtists(more, name);
 });
 
@@ -62,6 +70,16 @@ searchByNameBtn.addEventListener('click', async function (event) {
   await loadArtists(more, name);
 });
 
+genresList.addEventListener('change', async function (event) {
+  currentGenre = event.target.value;
+  currentPage = 1;
+  more = false;
+
+  closeDropDown();
+
+  await loadArtists(more, name);
+});
+
 init();
 
 async function init() {
@@ -78,6 +96,7 @@ async function loadArtists(more, name = '') {
       limit: CARDS_PER_PAGE,
       name: name,
       sortName: currentSort,
+      genre: currentGenre,
     });
     const newArtists = data?.artists || [];
 
@@ -242,4 +261,17 @@ function showLoader() {
 
 function hideLoader() {
   loader.style.display = 'none';
+}
+
+function closeDropDown() {
+  const filterWrapper = genresList.closest('[data-filter-wrapper]');
+
+  if (filterWrapper) {
+    filterWrapper.classList.remove('is-open');
+
+    const filterBtn = filterWrapper.querySelector('[data-filter-btn]');
+    if (filterBtn) {
+      filterBtn.setAttribute('aria-expanded', 'false');
+    }
+  }
 }
