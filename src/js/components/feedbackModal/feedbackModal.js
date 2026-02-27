@@ -118,7 +118,6 @@ function closeFeedbackModal() {
   document.body.classList.remove('modal-open');
 
   window.removeEventListener('keydown', onEscapeKeyDown);
-  backdropModal.removeEventListener('click', onBackDropModalClick);
 }
 
 function onEscapeKeyDown(event) {
