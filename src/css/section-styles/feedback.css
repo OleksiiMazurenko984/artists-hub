@@ -68,11 +68,8 @@
 .swiper .swiper-wrapper {
   margin-bottom: 26px;
 
-  @media (min-width: 767.98px) {
-    margin-bottom: 40px;
-  }
-  @media (min-width: 1439.98px) {
-    margin-bottom: 75px;
+  @media (min-width: 1440px) {
+    padding: 59px 0;
   }
 }
 
@@ -147,7 +144,7 @@
 }
 
 .custom-pagination {
-  display:flex;
+  display: flex;
   gap: 9px;
 }
 .feedback .custom-bullet {

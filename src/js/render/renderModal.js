@@ -46,7 +46,7 @@ export function renderBiography(artistsBio) {
         const tagsMarkup = genres
           .map(tag => `<li class="modal-tags">${tag}</li>`)
           .join('');
-        const imageSrc = strArtistThumb?.trim() || './img/placeholder.jpg';
+        const imageSrc = strArtistThumb?.trim() || placeholderImg;
 
         return `
         <h2 class="sub-title">${strArtist ?? 'Unknown Artist'}</h2>
@@ -63,12 +63,12 @@ export function renderBiography(artistsBio) {
             <p class="modal-text">${strGender ?? '—'}</p>
           </li>
           <li class="modal-artist-info-item">
-            <h3 class="modal-bold-text">Country</h3>
-            <p class="modal-text">${strCountry ?? '—'}</p>
-          </li>
-         <li class="modal-artist-info-item">
            <h3 class="modal-bold-text">Members</h3>
             <p class="modal-text">${intMembers ?? '—'}</p>
+          </li>
+          <li class="modal-artist-info-item">
+            <h3 class="modal-bold-text">Country</h3>
+            <p class="modal-text">${strCountry ?? '—'}</p>
           </li>
         </ul>
         <div class="biography">
