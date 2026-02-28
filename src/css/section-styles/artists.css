@@ -346,7 +346,7 @@
 }
 
 .filter-content.scrollable {
-  max-height: 376px;
+  max-height: 10.5rem;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #764191 transparent;
@@ -492,6 +492,10 @@
     padding: 0px;
     border-radius: 0px;
     background: transparent;
+  }
+
+  .filter-content.scrollable {
+    max-height: 376px;
   }
 }
 
